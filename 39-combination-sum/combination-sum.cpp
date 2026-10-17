@@ -1,6 +1,6 @@
 class Solution {
 private:
-    void helper(int i,vector<int> ds,int target,int n,vector<int>& candidates,vector<vector<int>>& ans){
+    void helper(int i,vector<int> &ds,int target,int n,vector<int>& candidates,vector<vector<int>>& ans){
         if(target==0){
             ans.push_back(ds);
             return;
@@ -20,7 +20,8 @@ public:
     vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
         int n = candidates.size();
         vector<vector<int>> ans;
-        helper(0,{},target,n,candidates,ans);
+        vector<int> ds;
+        helper(0,ds,target,n,candidates,ans);
         return ans;
     }
 };
